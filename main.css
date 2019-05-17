@@ -1,0 +1,32 @@
+.navbar{
+  background-color: rgb(96, 28, 185);
+}
+.navbar a{
+  color: white;
+  font-size: 1.5rem;
+}
+.navbar a:hover{
+  color: rgb(240, 240, 240);
+}
+.text-option{
+  background-color: rgb(96, 28, 185);
+}
+.text-area .text-editor, .text-area .md-result{
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.text-area .md-result{
+  border-right: 1px solid rgb(233, 233, 233);
+}
+.text-area .text-editor{
+  border-right: 1px solid rgb(233, 233, 233);
+  border-left: 1px solid rgb(233, 233, 233);
+}
+.text-area .column{
+  min-height: 300px;
+}
+.text-editor .content-editor{
+  min-height: 100%;
+}
+.text-editor .content-editor:focus{
+  border: none;
+}

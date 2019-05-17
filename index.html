@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TextDown | A simple editor text for mardown</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        TextDown
+      </a>
+    </div>
+  </nav>
+  <section class="section">
+    <div class="container">
+      <div class="editor">
+        <div class="columns is-mobile options">
+          <div class="column text-option has-text-centered">
+            <p class="buttons">
+              <a class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-heading"></i>
+                </span>
+              </a>
+              <a class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-bold"></i>
+                </span>
+              </a>
+              <a class="button">
+                <span class="icon is-small">
+                  <i class="fas fa-italic"></i>
+                </span>
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-strikethrough"></i>
+                </span>
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-list-ul"></i>
+                </span>            
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-list-ol"></i>
+                </span>            
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-quote-left"></i>
+                </span>
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-code"></i>
+                </span>                       
+              </a>
+              <a class="button">
+                <span class="icon">
+                  <i class="fas fa-image"></i>
+                </span>                       
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="columns text-area">
+          <div class="column text-editor">
+            <div class="content-editor" contenteditable="true">
+              Type Here....
+            </div>
+          </div>
+          <div class="column md-result" id="md-result">
+            Result in MarkDown here....
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./textdown.js"></script>
+</body>
+</html>
