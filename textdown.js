@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       content_editor_element.removeAttribute('first-time')
       content_editor_element.textContent = ''
     }
+    activateCommands()
   })
   
   for(let i = 0; i < options_buttons.length; i++){
@@ -17,8 +18,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(isFirstTime()){
           content_editor_element.focus()
           document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
-        }else 
+        }else{
           document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
+        }
       }else{
         document.execCommand('removeFormat', false, '')        
       }
