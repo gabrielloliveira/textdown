@@ -1,5 +1,5 @@
 .navbar{
-  background-color: rgb(96, 28, 185);
+  background-color: #15305C;
 }
 .navbar a{
   color: white;
@@ -9,7 +9,7 @@
   color: rgb(240, 240, 240);
 }
 .text-option{
-  background-color: rgb(96, 28, 185);
+  background-color: #31415C;
 }
 .text-area .text-editor, .text-area .md-result{
   border-bottom: 1px solid rgb(233, 233, 233);
