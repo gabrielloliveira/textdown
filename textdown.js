@@ -15,12 +15,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     options_buttons[i].addEventListener('click', function(){
       options_buttons[i].classList.toggle('is-link')
       if(options_buttons[i].classList.contains('is-link')){
-        if(isFirstTime()){
-          content_editor_element.focus()
-          document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
-        }else{
-          document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
-        }
+        content_editor_element.focus()
+        document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
       }else{
         document.execCommand('removeFormat', false, '')        
       }
@@ -72,6 +68,30 @@ function tagConversion(parser){
         break
       case '/b':
         parser[index] = '**'
+        break
+      case 'i':
+        parser[index] = '*'
+        break
+      case '/i':
+        parser[index] = '*'
+        break
+      case 'strike':
+        parser[index] = '~~'
+        break
+      case '/strike':
+        parser[index] = '~~'
+        break
+      case 'ul':
+        parser[index] = ''
+        break
+      case '/ul':
+        parser[index] = ''
+        break
+      case 'li':
+        parser[index] = '- '
+        break
+      case '/li':
+        parser[index] = '<br>'
         break
       }
   })
