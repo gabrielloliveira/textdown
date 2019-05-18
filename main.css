@@ -12,14 +12,7 @@
   background-color: #31415C;
 }
 .text-area .text-editor, .text-area .md-result{
-  border-bottom: 1px solid rgb(233, 233, 233);
-}
-.text-area .md-result{
-  border-right: 1px solid rgb(233, 233, 233);
-}
-.text-area .text-editor{
-  border-right: 1px solid rgb(233, 233, 233);
-  border-left: 1px solid rgb(233, 233, 233);
+  border: 1px solid rgb(233, 233, 233);
 }
 .text-area .column{
   min-height: 300px;
