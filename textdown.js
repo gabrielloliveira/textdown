@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
       if(options_buttons[i].classList.contains('is-link')){
         content_editor_element.focus()
-        document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
+        if(!(options_buttons[i].getAttribute('exec-command') === 'h2'))
+          document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
+        else
+          document.execCommand('formatblock', false, 'h2')
       }else{
         document.execCommand('removeFormat', false, '')        
       }
@@ -102,6 +105,12 @@ function tagConversion(parser){
         parser[index] = '> '
         break
       case '/blockquote':
+        parser[index] = '<br>'
+        break
+      case 'h2':
+        parser[index] = '## '
+        break
+      case '/h2':
         parser[index] = '<br>'
         break
       }
