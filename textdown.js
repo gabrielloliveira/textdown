@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   const content_editor_element = document.querySelector('[contenteditable]');
+  const options_buttons = document.getElementsByClassName('text-option-button')
   let result_markdown_element = document.getElementById('md-result')
   content_editor_element.addEventListener('click', function(){
     if(content_editor_element.hasAttribute("first-time")){
@@ -11,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let md = htmlToMD(content_editor_element.innerHTML)
     result_markdown_element.innerHTML = md
   })
+  for(let i = 0; i < options_buttons.length; i++){
+    options_buttons[i].addEventListener('click', function(){
+      options_buttons[i].classList.toggle('is-link')
+    })
+  }
 })
 
 function htmlToMD(text){
