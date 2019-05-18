@@ -24,6 +24,11 @@
   list-style-type: disc;
   margin-left: 10px;
 }
+.text-editor .content-editor blockquote{
+  background-color: #f5f5f5;
+  border-left: 5px solid #dbdbdb;
+  padding: 1.25em 1.5em;
+}
 .text-editor .content-editor:focus{
   border: none;
 }

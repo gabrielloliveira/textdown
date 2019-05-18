@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   for(let i = 0; i < options_buttons.length; i++){
     options_buttons[i].addEventListener('click', function(){
-      options_buttons[i].classList.toggle('is-link')
+      if(!(options_buttons[i].getAttribute('exec-command') === 'blockquote'))
+        options_buttons[i].classList.toggle('is-link')
+      
       if(options_buttons[i].classList.contains('is-link')){
         content_editor_element.focus()
         document.execCommand(options_buttons[i].getAttribute('exec-command'), false, '')
@@ -35,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function activateCommands(){
   const options_buttons_active = document.getElementsByClassName('text-option-button is-link')
   for(let i = 0; i < options_buttons_active.length; i++){
+    if(options_buttons_active[i].getAttribute('exec-command') === 'blockquote')
+      document.execCommand('formatblock', false, 'blockquote')
+    else
       document.execCommand(options_buttons_active[i].getAttribute('exec-command'), false, '')
   }
 }
@@ -91,6 +96,12 @@ function tagConversion(parser){
         parser[index] = '- '
         break
       case '/li':
+        parser[index] = '<br>'
+        break
+      case 'blockquote':
+        parser[index] = '> '
+        break
+      case '/blockquote':
         parser[index] = '<br>'
         break
       }
